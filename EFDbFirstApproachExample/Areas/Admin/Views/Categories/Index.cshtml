@@ -1,0 +1,27 @@
+﻿@model List<Company.DomainModels.Category>
+@{
+    ViewBag.Title = "Categories";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayoutPage1.cshtml";
+}
+
+<h2>Categories</h2>
+@Html.ActionLink("Create New Category", "Create", new { Controller = "Categories", area = "Admin"}, new { @class = "btn btn-primary"})
+<table class="table">
+    <tr>
+        <th>Category Id</th>
+        <th>Category Name</th>
+        <th>Action List</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.CategoryID</td>
+            <td>@item.CategoryName</td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.CategoryID, Controller = "Categories", area = "Admin" })
+                @Html.ActionLink("Delete", "Delete", new { id = item.CategoryID, Controller = "Categories", area = "Admin" })
+            </td>
+        </tr>
+    }
+
+</table>

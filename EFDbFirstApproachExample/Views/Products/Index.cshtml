@@ -1,0 +1,13 @@
+﻿@model List<Company.DomainModels.Product>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Product Sale</h2>
+
+<div class="card-group">
+    @foreach (var item in Model)
+    {
+        Html.RenderAction("DisplaySingleProduct", "Products", new { p = item });
+    }
+</div>

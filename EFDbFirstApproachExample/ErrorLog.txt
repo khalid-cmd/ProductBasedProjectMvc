@@ -1,0 +1,42 @@
+Message: SQL Server service has been paused. No new connections will be allowed. To resume the service, use SQL Computer Manager or the Services application in Control Panel.
+Login failed for user 'MicrosoftAccount\csharprana@gmail.com'.
+Cannot continue the execution because the session is in the kill state.
+A severe error occurred on the current command.  The results, if any, should be discarded., Type: System.Data.SqlClient.SqlException, Source: .Net SqlClient Data Provider
+Message: The underlying provider failed on Open., Type: System.Data.Entity.Core.EntityException, Source: EntityFramework
+Message: SQL Server service has been paused. No new connections will be allowed. To resume the service, use SQL Computer Manager or the Services application in Control Panel.
+Login failed for user 'MicrosoftAccount\csharprana@gmail.com'.
+Cannot continue the execution because the session is in the kill state.
+A severe error occurred on the current command.  The results, if any, should be discarded., Type: System.Data.SqlClient.SqlException, Source: .Net SqlClient Data Provider
+Message: The underlying provider failed on Open., Type: System.Data.Entity.Core.EntityException, Source: EntityFramework
+Message: SQL Server service has been paused. No new connections will be allowed. To resume the service, use SQL Computer Manager or the Services application in Control Panel.
+Login failed for user 'MicrosoftAccount\csharprana@gmail.com'.
+Cannot continue the execution because the session is in the kill state.
+A severe error occurred on the current command.  The results, if any, should be discarded., Type: System.Data.SqlClient.SqlException, Source: .Net SqlClient Data Provider
+Message: The controller for path '/dasd' was not found or does not implement IController., Type: System.Web.HttpException, Source: System.Web.Mvc
+Message: A public action method 'a' was not found on controller 'EFDbFirstApproachExample.Controllers.AccountController'., Type: System.Web.HttpException, Source: System.Web.Mvc
+Message: The controller for path '/asdf/asdf' was not found or does not implement IController., Type: System.Web.HttpException, Source: System.Web.Mvc
+Message: A public action method 'indexasd' was not found on controller 'EFDbFirstApproachExample.Controllers.ProductsController'., Type: System.Web.HttpException, Source: System.Web.Mvc
+Message: A public action method 'easdf' was not found on controller 'EFDbFirstApproachExample.Controllers.ProductsController'., Type: System.Web.HttpException, Source: System.Web.Mvc
+Message: A public action method 'in' was not found on controller 'EFDbFirstApproachExample.Controllers.ProductsController'., Type: System.Web.HttpException, Source: System.Web.Mvc
+Message: A public action method 'id' was not found on controller 'EFDbFirstApproachExample.Controllers.HomeController'., Type: System.Web.HttpException, Source: System.Web.Mvc
+Message: The controller for path '/hode/asdf' was not found or does not implement IController., Type: System.Web.HttpException, Source: System.Web.Mvc
+Message: An error occurred while executing the command definition. See the inner exception for details., Type: System.Data.Entity.Core.EntityCommandExecutionException, Source: EntityFramework
+Message: An error occurred while executing the command definition. See the inner exception for details., Type: System.Data.Entity.Core.EntityCommandExecutionException, Source: EntityFramework
+Message: SQL Server service has been paused. No new connections will be allowed. To resume the service, use SQL Computer Manager or the Services application in Control Panel.
+Login failed for user 'MicrosoftAccount\csharprana@gmail.com'.
+Cannot continue the execution because the session is in the kill state.
+A severe error occurred on the current command.  The results, if any, should be discarded., Type: System.Data.SqlClient.SqlException, Source: .Net SqlClient Data Provider
+Message: SQL Server service has been paused. No new connections will be allowed. To resume the service, use SQL Computer Manager or the Services application in Control Panel.
+Login failed for user 'MicrosoftAccount\csharprana@gmail.com'.
+Cannot continue the execution because the session is in the kill state.
+A severe error occurred on the current command.  The results, if any, should be discarded., Type: System.Data.SqlClient.SqlException, Source: .Net SqlClient Data Provider
+Message: An error occurred while executing the command definition. See the inner exception for details., Type: System.Data.Entity.Core.EntityCommandExecutionException, Source: EntityFramework
+Message: An error occurred while executing the command definition. See the inner exception for details., Type: System.Data.Entity.Core.EntityCommandExecutionException, Source: EntityFramework
+Message: A public action method 'ind' was not found on controller 'EFDbFirstApproachExample.Controllers.HomeController'., Type: System.Web.HttpException, Source: System.Web.Mvc
+Message: A public action method 'ind' was not found on controller 'EFDbFirstApproachExample.Controllers.ProductsController'., Type: System.Web.HttpException, Source: System.Web.Mvc
+Message: Object reference not set to an instance of an object., Type: System.NullReferenceException, Source: App_Web_2vf1nn25
+Message: Object reference not set to an instance of an object., Type: System.NullReferenceException, Source: App_Web_2vf1nn25
+Message: A public action method 'loginnn' was not found on controller 'EFDbFirstApproachExample.Controllers.AccountController'., Type: System.Web.HttpException, Source: System.Web.Mvc
+Message: The controller for path '/hjh' was not found or does not implement IController., Type: System.Web.HttpException, Source: System.Web.Mvc
+Message: A public action method 'ind' was not found on controller 'EFDbFirstApproachExample.Controllers.ProductsController'., Type: System.Web.HttpException, Source: System.Web.Mvc
+Message: The controller for path '/jj' was not found or does not implement IController., Type: System.Web.HttpException, Source: System.Web.Mvc

@@ -1,0 +1,85 @@
+﻿@model Company.DomainModels.Product
+@using EFDbFirstApproachExample.HtmlHelpers
+
+@{
+    ViewBag.Title = "Create Product";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayoutPage1.cshtml";
+}
+
+<h2>Create Product</h2>
+
+@using (Html.BeginForm("create", "products", new { area = "Admin"}, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken();
+<div class="form-row">
+    <div class="form-group col-md-6">
+        @Html.LabelFor(temp => temp.ProductName)
+        @Html.TextBoxFor(temp => temp.ProductName, new { @class = "form-control", placeholder = "Product Name" })
+        @Html.ValidationMessageFor(temp => temp.ProductName)
+    </div>
+    <div class="form-group col-md-6">
+        @Html.LabelFor(temp => temp.Price)
+        @Html.TextBoxFor(temp => temp.Price, new { @class = "form-control", placeholder = "Price" })
+        @Html.ValidationMessageFor(temp => temp.Price)
+    </div>
+
+    <div class="form-group col-md-6">
+        @Html.LabelFor(temp => temp.DateOfPurchase)
+        @Html.TextBoxFor(temp => temp.DateOfPurchase, new { @class = "form-control date", placeholder = "Date Of Purchase" })
+    </div>
+
+    @* static drop down list *@
+    <div class="col-md-6">
+        <div class="form-group col-md-6">
+            @Html.LabelFor(temp => temp.AvailabilityStatus, new { @class = "form-check-label" })
+            <div class="form-check">
+                @Html.RadioButtonFor(temp => temp.AvailabilityStatus, "InStock", new { @class = "form-check-input", id = "InStock" })
+                <label class="form-check-label" for="InStock">In Stock</label>
+            </div>
+            <div class="form-check">
+                @Html.RadioButtonFor(temp => temp.AvailabilityStatus, "OutOfStock", new { @class = "form-check-input", id = "OutOfStock" })
+                <label class="form-check-label" for="OutOfStock">Out of Stock</label>
+            </div>
+            @Html.ValidationMessageFor(temp => temp.AvailabilityStatus)
+        </div>
+    </div>
+
+
+        @* dynamic drop down list *@
+        <div class="form-group col-md-6">
+            @Html.LabelFor(t => t.CategoryID)
+            @Html.DropDownListFor(t => t.CategoryID, new SelectList(
+                (List<Company.DomainModels.Category>)ViewData["Categories"], 
+                "CategoryID", "CategoryName"), "please select", new { @class = "form-control" })
+            @Html.ValidationMessageFor(temp => temp.CategoryID)
+
+
+        </div>
+        <div class="form-group col-md-6">
+            @Html.LabelFor(t => t.BrandID)
+            @Html.DropDownListFor(t => t.BrandID, new SelectList(ViewBag.Brands, "BrandID", "BrandName"), "please select", new { @class = "form-control" })
+            @Html.ValidationMessageFor(temp => temp.BrandID)
+
+        </div>
+
+        @* image file *@
+        <div class="form-group col-md-12">
+            <label for="Image">Image</label>
+            @Html.File("form-control-file")
+            @*<input type="file" class="form-control-file" id="Image" name="Photo" />*@
+        </div>
+
+        <div class="form-group">
+            <div class="form-check">
+                @Html.CheckBoxFor(temp => temp.Active, new { @class = "form-check-input", value = "true" })
+                @Html.LabelFor(temp => temp.Active, new { @class = "form-check-label" })
+                @Html.ValidationMessageFor(temp=>temp.Photo)
+
+            </div>
+        </div>
+    </div>
+
+    @Html.ValidationSummary();
+    <button type="submit" class="btn btn-success">Create</button>
+    <a href="/admin/products/index" class="btn btn-danger">Cancel</a>
+ }

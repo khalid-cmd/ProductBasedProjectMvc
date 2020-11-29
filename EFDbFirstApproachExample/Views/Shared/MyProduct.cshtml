@@ -1,0 +1,12 @@
+﻿@model Company.DomainModels.Product
+
+<div class="card m-3" style="min-width:18rem; max-width:30%">
+    <img class="card-img-top" src="data:image;base64,@Model.Photo" style="height:200px; width:auto" alt="Card image cap" />
+    <div class="card-body">
+        <h5 class="card-title">@Model.ProductName</h5>
+        <p class="card-text"><small class="text-muted">@((Model.Brand != null)? Model.Brand.BrandName:"")</small></p>
+        <p class="card-text"><small class="text-muted">@((Model.Category != null)? Model.Category.CategoryName:"")</small></p>
+    </div>
+</div>
+
+

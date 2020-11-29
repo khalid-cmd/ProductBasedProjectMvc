@@ -1,0 +1,33 @@
+﻿@model Company.DomainModels.Brand
+
+@{
+    ViewBag.Title = "Delete Brand";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayoutPage1.cshtml";
+}
+
+<h2>Delete Brand</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BrandName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BrandName)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm("Delete","Brands",FormMethod.Post, new { area = "Admin" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(t => t.BrandID)
+        <div class="form-actions no-color">
+            <div>Are you sure to delete this product?</div>
+            <button type="submit" class="btn btn-danger">Delete</button>
+            <a class="btn btn-outline-danger" href="admin/brands/index">Cancel</a>
+        </div>
+    }
+</div>

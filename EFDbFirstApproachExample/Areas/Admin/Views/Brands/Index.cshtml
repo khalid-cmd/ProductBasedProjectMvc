@@ -1,0 +1,29 @@
+﻿@model List<Company.DomainModels.Brand>
+
+@{
+    ViewBag.Title = "Brands";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayoutPage1.cshtml";
+}
+
+<h2>Brands</h2>
+<a href="/admin/brands/create" class="btn btn-primary">Create Brand</a>
+<table class="table">
+    <tr>
+        <th>Brand ID</th>
+        <th>Brand Name</th>
+        <th>Actions</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.BrandID</td>
+            <td>@item.BrandName</td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.BrandID, Controller = "Brands", area = "admin" })
+                @Html.ActionLink("Delete", "Delete", new { id = item.BrandID, Controller = "Brands", area = "admin" })
+            </td>
+        </tr>
+    }
+</table>
+
+

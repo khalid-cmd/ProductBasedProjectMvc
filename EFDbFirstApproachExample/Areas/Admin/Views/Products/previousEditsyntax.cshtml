@@ -1,0 +1,89 @@
+﻿@model EFDbFirstApproachExample.Models.Product
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayoutPage1.cshtml";
+}
+
+<h2>Edit Product</h2>
+<form action="/admin/products/Edit" method="post">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="ProductName">product Name</label>
+            @* hidden field *@
+            <input type="hidden" name="ProductId" value="@Model.ProductID" />
+            <input type="text" class="form-control" id="ProductName" name="ProductName" placeholder="Product Name" value="@Model.ProductName" />
+        </div>
+        <div class="form-group col-md-6">
+            <label for="Price">Price</label>
+            <input type="text" class="form-control" id="Price" name="Price" placeholder="Price" value="@Model.Price" />
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="DateOfPurchase">Date Of Purchase</label>
+            <input type="date" class="form-control" id="DateOfPurchase" name="DateOfPurchase" placeholder="Date Of Purchase" value="@Model.DateOfPurchase.Value.ToString("yyyy/MM/dd")" />
+        </div>
+        <div class="form-group col-md-6">
+            <label for="AvailabilityStatus">Availability Status</label>
+            <input type="text" class="form-control" id="AvailabilityStatus" name="AvailabilityStatus" placeholder="Availability Status" value="@Model.AvailabilityStatus" />
+        </div>
+
+        @*<div class="form-group col-md-6">
+                <label for="CategoryID">Category ID</label>
+                <input type="text" class="form-control" id="CategoryID" name="CategoryID" placeholder="CategoryID" value="@Model.CategoryID"  />
+            </div>*@
+        <div class="form-group col-md-6">
+            <label for="CategoryID">Category</label>
+            <select class="form-control" id="CategoryID" name="CategoryID">
+                <option value="">Please Select</option>
+                @foreach (var cat in ViewBag.Categories)
+                {
+                    //if condition for showing selected value
+                    if (cat.CategoryID == Model.CategoryID)
+                    {
+                        <option value="@cat.CategoryID" selected="selected">@cat.CategoryName</option>
+                    }
+                    else
+                    {
+                        <option value="@cat.CategoryID">@cat.CategoryName</option>
+                    }
+
+                }
+            </select>
+        </div>
+
+
+        @*<div class="form-group col-md-6">
+                <label for="BrandID">Brand ID</label>
+                <input type="text" class="form-control" id="BrandID" name="BrandID" placeholder="Brand ID" value="@Model.BrandID" />
+            </div>*@
+        <div class="form-group col-md-6">
+            <label for="BrandID">Brand</label>
+            <select class="form-control" id="BrandID" name="BrandID">
+                <option value="">Please Select</option>
+                @foreach (var bran in ViewBag.Brands)
+                {
+                    if (bran.BrandID == Model.BrandID)
+                    {
+                        <option value="@bran.BrandID" selected="selected">@bran.BrandName</option>
+                    }
+                    else
+                    {
+                        <option value="@bran.BrandID">@bran.BrandName</option>
+                    }
+
+                }
+            </select>
+        </div>
+
+        <div class="form-group">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="Active" name="Active" checked="@Model.Active" value="true" />
+                <label class="form-check-label" for="Active">Active</label>
+            </div>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-success">Save</button>
+    <a href="/admin/products/index" class="btn btn-danger">Cancel</a>
+</form>
+
